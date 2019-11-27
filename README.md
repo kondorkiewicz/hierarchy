@@ -1,6 +1,6 @@
-# Climbing Ranking
+# Hierarchy
 
-Welcome to your new Hanami project!
+Climbing Hierarchy
 
 ## Setup
 

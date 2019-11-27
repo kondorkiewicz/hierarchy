@@ -1,7 +1,7 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
-require_relative '../lib/climbing_ranking'
+require_relative '../lib/hierarchy'
 require_relative '../apps/web/application'
 
 Hanami.configure do
@@ -28,7 +28,7 @@ Hanami.configure do
   end
 
   mailer do
-    root 'lib/climbing_ranking/mailers'
+    root 'lib/hierarchy/mailers'
 
     # See https://guides.hanamirb.org/mailers/delivery
     delivery :test
