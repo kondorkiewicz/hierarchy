@@ -14,6 +14,6 @@ require 'rom/sql/rake_task'
 
 namespace :db do
   task setup: :environment do
-    ROM::SQL::RakeSupport.env = Bookshelf::Persistence.configuration
+    ROM::SQL::RakeSupport.env = Hierarchy::Persistence.configuration
   end
 end

@@ -7,6 +7,7 @@ gem 'rom',     '~> 4.2'
 gem 'rom-sql', '~> 2.5'
 
 gem 'pg'
+gem 'sqlite3'
 
 group :development do
   # Code reloading
