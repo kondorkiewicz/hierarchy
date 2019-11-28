@@ -1,10 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'byebug'
+gem 'hanami',  '~> 1.3'
 gem 'rake'
-gem 'hanami',       '~> 1.3'
-gem 'hanami-model', '~> 1.3'
+gem 'rom',     '~> 4.2'
+gem 'rom-sql', '~> 2.5'
 
 gem 'pg'
+gem 'sqlite3'
 
 group :development do
   # Code reloading

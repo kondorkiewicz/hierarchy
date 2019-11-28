@@ -1,9 +1,10 @@
-Hanami::Model.migration do
+ROM::SQL.migration do
   change do
-    create_table :crags do
+    create_table :users do
       primary_key :id
-
       column :name, String, null: false
+      column :surname, String, null: false
+      column :man, :boolean, null: false
 
       column :created_at, DateTime, null: false
       column :updated_at, DateTime, null: false

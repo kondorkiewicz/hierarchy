@@ -1,0 +1,32 @@
+<h2>Add line</h2>
+
+<% unless params.valid? %>
+  <div class="errors">
+    <h3>There was a problem with your submission</h3>
+    <ul>
+      <% params.error_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%=
+  form_for :line, routes.lines_path do
+    div class: 'input' do
+      label      :name
+      text_field :name
+    end
+    div class: 'input' do
+      label      :grade
+      text_field :grade
+    end
+    div class: 'input' do
+      label      :kind
+      text_field :kind
+    end
+    div class: 'controls' do
+      submit 'Create Line'
+    end
+  end
+%>

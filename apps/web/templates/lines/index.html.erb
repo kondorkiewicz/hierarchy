@@ -1,0 +1,15 @@
+<h2>All lines</h2>
+
+<% if lines.any? %>
+  <div id="lines">
+    <% lines.each do |line| %>
+      <div class="line">
+        <h2><%= line.name %></h2>
+        <p><%= line.grade %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no lines yet.</p>
+<% end %>
+<a href="/lines/new">New line</a>
