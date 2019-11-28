@@ -1,14 +1,23 @@
-<h2>All users</h2>
-
-<% if users.any? %>
-  <div id="users">
-    <% users.each do |user| %>
-      <div class="user">
-        <p><%= "#{user.name} #{user.surname}" %></p>
-      </div>
-    <% end %>
-  </div>
-<% else %>
-  <p class="placeholder">There are no users yet.</p>
-<% end %>
-<a href="/users/new">New user</a>
+<div class="container">
+  <% if users.any? %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Full Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.each do |user| %>
+          <tr>
+            <th scope="row">1</th>
+            <td><%= "#{user.name} #{user.surname}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p class="placeholder">There are no users yet.</p>
+  <% end %>
+  <a href="/users/new">New user</a>
+</div>
