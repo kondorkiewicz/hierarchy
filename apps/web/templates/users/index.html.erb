@@ -1,0 +1,14 @@
+<h2>All users</h2>
+
+<% if users.any? %>
+  <div id="users">
+    <% users.each do |user| %>
+      <div class="user">
+        <p><%= "#{user.name} #{user.surname}" %></p>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p class="placeholder">There are no users yet.</p>
+<% end %>
+<a href="/users/new">New user</a>
