@@ -4,10 +4,15 @@ module Web
       class Index
         include Web::Action
 
-        expose :lines
+        expose :lines, :pager
 
         def call(params)
-          @lines = Hierarchy::Repositories[:Line].all
+            relation = Hierarchy::Repositories[:Line]
+              .lines.per_page(20)
+              .page(params[:page] || 1)
+
+          @lines = relation.to_a
+          @pager = relation.pager
         end
       end
     end

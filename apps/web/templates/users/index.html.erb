@@ -8,9 +8,11 @@
         </tr>
       </thead>
       <tbody>
-        <% users.each do |user| %>
+        <% users.to_a.each.with_index(1) do |user, i| %>
           <tr>
-            <th scope="row">1</th>
+            <th scope="row">
+              <%= ((params[:page] || 1).to_i - 1) * pager.per_page + i %>
+            </th>
             <td><%= "#{user.name} #{user.surname}" %></td>
           </tr>
         <% end %>
@@ -18,6 +20,8 @@
     </table>
   <% else %>
     <p class="placeholder">There are no users yet.</p>
+    <a href="/users/new">New user</a>
   <% end %>
-  <a href="/users/new">New user</a>
+
+  <%= pagination %>
 </div>
